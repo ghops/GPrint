@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<fx:root hgap="10.0" maxWidth="1.7976931348623157E308" type="GridPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.0" minWidth="10.0" prefWidth="157.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="93.0" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="140.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="140.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="76.0" minHeight="0.0" prefHeight="16.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="76.0" minHeight="0.0" prefHeight="16.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <ImageView fx:id="preview" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+         <image>
+            <Image url="@../../../../../../previews/738.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="design" graphicTextGap="10.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" style="-fx-background-radius: 5; -fx-background-color: -item-bg;" text="DG 1253 / 4001" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <graphic>
+            <CheckBox fx:id="status" mnemonicParsing="false" />
+         </graphic>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding></Label>
+      <Label alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" text="Desen" textFill="#aea1a1" GridPane.columnIndex="1" />
+      <Label fx:id="fabric" contentDisplay="CENTER" text="MARSHMELLOW" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Label contentDisplay="BOTTOM" maxHeight="1.7976931348623157E308" minWidth="67.0" prefHeight="75.0" prefWidth="158.0" text="Kalite" textFill="#aea1a1" GridPane.columnIndex="2" />
+      <Label fx:id="meters" contentDisplay="CENTER" text="0mt" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <Label alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" minWidth="104.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="75.0" prefWidth="104.0" text="Sipariş mt." textFill="#aea1a1" GridPane.columnIndex="3" />
+      <Label maxHeight="1.7976931348623157E308" minWidth="110.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="75.0" prefWidth="110.0" text="Basılan mt" textFill="#aea1a1" GridPane.columnIndex="4" />
+      <Label fx:id="width" contentDisplay="CENTER" text="150 cm." GridPane.columnIndex="5" GridPane.rowIndex="1" />
+      <Label alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" minWidth="100.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="75.0" prefWidth="100.0" text="En" textFill="#aea1a1" GridPane.columnIndex="5" />
+      <Label fx:id="weight" contentDisplay="CENTER" text="105 gr." GridPane.columnIndex="6" GridPane.rowIndex="1" />
+      <Label alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" minWidth="87.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="75.0" prefWidth="87.0" text="Gramaj" textFill="#aea1a1" GridPane.columnIndex="6" />
+      <Label fx:id="description" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="NOT" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="7" GridPane.rowIndex="2" />
+      <HBox alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" prefWidth="185.0" spacing="5.0" GridPane.columnIndex="7" GridPane.rowIndex="1">
+         <children>
+            <Button fx:id="editButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" styleClass="edit" text="düzenle">
+               <graphic>
+                  <FontIcon iconLiteral="mdi2s-square-edit-outline" iconSize="14" />
+               </graphic>
+            </Button>
+            <Button fx:id="deleteButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" styleClass="delete" text="sil">
+               <graphic>
+                  <FontIcon iconLiteral="mdi2d-delete-variant" iconSize="14" />
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" spacing="5.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+         <children>
+            <Label fx:id="printedMeters" contentDisplay="CENTER" text="0 mt">
+               <graphic>
+                  <ProgressBar fx:id="progressBar" progress="0.5" />
+               </graphic>
+            </Label>
+            <Button fx:id="printButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" styleClass="add" text="ekle">
+               <graphic>
+                  <FontIcon iconLiteral="mdi2p-printer-settings" iconSize="14" />
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</fx:root>

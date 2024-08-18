@@ -1,0 +1,19 @@
+@import "color.css";
+
+
+.root{
+    -fx-background-color: -root ;
+
+}
+.text-field{
+    -fx-background-color: -text-field-bg;
+    -fx-text-fill:-text-field-color;
+    -fx-border-width:0;
+    -fx-border-color:transparent;
+    -fx-background-radius:  5;
+    -fx-border-radius:  5;
+}
+
+.text-field:focused{
+    -fx-background-color:-item-bg-focus ;
+}

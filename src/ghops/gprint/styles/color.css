@@ -1,0 +1,67 @@
+* {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+
+
+    -red: #f75625;
+    -green: #6dd400;
+    -blue: #2399fa;
+    -light: #ffffff;
+    -gray: #8a8a8a;
+    -gray-light:#b0b0b0;
+    -gray-light-2:#e6e6e6;
+    -gray-light-3:#f2f2f2;
+    -dark: #000;
+    -dark-light: #3b3b3b;
+    -base-color:-blue;
+    -root: -light;
+    -bg-text-box: -gray;
+    -bg-text-box-focus:-gray-light-2;
+    -text-color: -dark-light;
+
+
+    -base-color: -blue;
+    
+    -item-bg: -gray-light-3;
+    -item-border-color: -gray-light;
+    -item-bg-focus: -gray-light-2;
+
+
+    /*************  BUTTON     */
+    -button-text-color: -text-color;
+    -bg-button: transparent;
+    -bg-button-hover: -gray-light-2;
+    -bg-button-press: -gray-light;
+
+    -bg-add-button: -green;
+    -bg-edit-button: -blue;
+    -bg-delete-button: -red;
+
+
+    /****** ORDER ITEM */
+    -order-item-bg: -light;
+    -order-item-text: -dark-light;
+    -order-item-icon-bg: -gray-light-2;
+    -order-item-icon-text: -dark-light ;
+ 
+
+    /* product item */
+
+
+    -product-item-bg: -gray-light-3; 
+    -product-item-text: -gray;
+    -product-item-icon-bg: -gray-light-2;
+ 
+
+    /* text-field  */
+    -text-field-color: -text-color;
+    -text-field-bg: -item-bg;
+ 
+    /* date-picker  */
+    
+    -date-picker-arrow-button-color: -gray;
+     
+    
+
+
+}

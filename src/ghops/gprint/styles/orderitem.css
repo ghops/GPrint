@@ -1,0 +1,78 @@
+.orderItem{
+    -fx-border-color: -line-color;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: -bg-color;
+    -fx-background-radius:10;
+    -fx-border-radius:10;
+}
+
+.orderItem .productItem{
+
+    -fx-background-radius:10;
+
+}
+.orderItem .radius-lt{
+    -fx-background-radius: 15 0 10 0;
+}
+
+.orderItem .radius-lb{
+    -fx-background-radius: 0 10 0 15;
+}
+
+
+.orderItem .order-detail .label   {
+    -fx-text-fill: -order-item-text;
+}
+.orderItem .order-detail .label .label   {
+    -fx-background-color:-order-item-icon-bg;
+}
+
+.orderItem .order-detail .label .label .ikonli-font-icon {
+    -fx-fill: -order-item-icon-text;
+}
+
+
+
+
+.orderItem   .productItem {
+    -fx-background-color: -item-bg;
+    -fx-background-radius: 13;
+}
+
+.orderItem .products .productItem .detail .label{
+    -fx-background-color:  -product-item-icon-bg;
+    -fx-background-radius: 13;
+    -fx-text-fill: -product-item-text;
+    -fx-padding: 3 10 3 10;
+}
+
+.orderItem .products .productItem .detail .label  .ikonli-font-icon{
+    -fx-fill: -gray;
+}
+
+
+
+
+.orderItem .list-view .scroll-bar:vertical .increment-arrow,
+.orderItem .list-view .scroll-bar:vertical .decrement-arrow,
+.orderItem .list-view .scroll-bar:vertical .increment-button,
+.orderItem .list-view .scroll-bar:vertical .decrement-button {
+    -fx-padding:0;
+}
+
+.orderItem .list-view .scroll-bar:horizontal .increment-arrow,
+.orderItem .list-view .scroll-bar:horizontal .decrement-arrow,
+.orderItem .list-view .scroll-bar:horizontal .increment-button,
+.orderItem .list-view .scroll-bar:horizontal .decrement-button {
+    -fx-padding:0;
+}
+
+
+
+.orderForm .check-box .box{
+    -fx-background-color: -item-bg;
+}
+
+.orderForm .check-box:selected .box{
+    -fx-background-color: -base-color;
+}

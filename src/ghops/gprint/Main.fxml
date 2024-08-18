@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="985.0" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ghops.gprint.MainController">
+   <children>
+      <ToolBar layoutX="5.0" prefHeight="85.0" prefWidth="985.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <Button fx:id="orderButton" contentDisplay="TOP" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefHeight="73.0" prefWidth="110.0" text="Siparişler">
+               <graphic>
+                  <FontIcon iconLiteral="mdi2s-shopping-outline" iconSize="24" />
+               </graphic>
+            </Button>
+            <Button fx:id="sampleButton" contentDisplay="TOP" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefHeight="73.0" prefWidth="110.0" text="Numuneler">
+               <graphic>
+                  <FontIcon iconLiteral="mdi2a-ammunition" iconSize="24" styleClass="edit" />
+               </graphic>
+            </Button>
+            <FontIcon />
+            <Button fx:id="customerButton" contentDisplay="TOP" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefHeight="73.0" prefWidth="110.0" text="Firmalar">
+               <graphic>
+                  <FontIcon iconLiteral="mdi2a-account-group-outline" iconSize="24" styleClass="edit" />
+               </graphic>
+            </Button>
+            <Button fx:id="fabricButton" contentDisplay="TOP" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefHeight="73.0" prefWidth="110.0" text="Kaliteler">
+               <graphic>
+                  <FontIcon iconLiteral="mdi2b-book-open-page-variant-outline" iconSize="24" styleClass="edit" />
+               </graphic>
+            </Button>
+            <Button fx:id="reportButton" contentDisplay="TOP" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefHeight="73.0" prefWidth="110.0" text="Raporlar">
+               <graphic>
+                  <FontIcon iconLiteral="mdi2b-book-alert-outline" iconSize="24" styleClass="edit" />
+               </graphic>
+            </Button>
+         </items></ToolBar>
+      <StackPane fx:id="page" alignment="TOP_CENTER" layoutX="7.0" layoutY="83.0" prefHeight="150.0" prefWidth="200.0" stylesheets="@styles/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="85.0" />
+   </children>
+</AnchorPane>

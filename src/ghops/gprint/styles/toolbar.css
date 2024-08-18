@@ -1,0 +1,6 @@
+@import "color.css";
+/***************** TOOLBAR ******************/
+.tool-bar{
+    -fx-background-color: -root;
+    -fx-border-width:0;  
+}

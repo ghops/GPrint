@@ -1,0 +1,63 @@
+@import "color.css";
+/************* BUTTONS *************/
+
+.button {
+    -fx-border-width:0;
+    -fx-background-color: -bg-button;
+    -fx-text-fill: -button-text-color;
+    -fx-background-radius:5;
+    -fx-border-radius:5;
+}
+
+.button.light .ikonli-font-icon{
+    -fx-opacity:0.5;
+}
+
+.button.light:pressed .ikonli-font-icon{
+    -fx-opacity:1;
+}
+
+.button .ikonli-font-icon{
+    -fx-fill: -button-text-color;
+}
+
+
+
+.button:hover{
+    -fx-border-width:0;
+    -fx-background-color: -bg-button-hover;
+}
+
+
+.button:pressed{
+    -fx-background-color: -bg-button-press;
+}
+
+
+
+
+.button.edit:pressed{
+    -fx-background-color: -bg-edit-button;
+    -fx-text-fill: -light;
+}
+.button.edit:pressed .ikonli-font-icon{
+    -fx-fill: -light;
+}
+
+.button.add:pressed{
+    -fx-background-color: -bg-add-button;
+    -fx-text-fill: -light;
+}
+.button.add:pressed .ikonli-font-icon{
+    -fx-fill: -light;
+}
+
+.button.delete:pressed{
+    -fx-background-color: -bg-delete-button;
+    -fx-text-fill: -light;
+
+}
+.button.delete:pressed .ikonli-font-icon{
+
+    -fx-fill: -light;
+}

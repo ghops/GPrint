@@ -1,0 +1,55 @@
+@import "color.css";
+@import "buttons.css";
+@import "toolbar.css";
+@import "orderitem.css";
+@import "textfiled.css";
+@import "datepicker.css";
+@import "listview.css";
+@import "checkbox.css";
+@import "progress.css";
+@import "combobox.css";
+
+.root{
+    -bg-color: white;
+    -line-color: #e0e0e0;
+
+}
+
+
+.border {
+    -fx-border-width:1;
+    -fx-border-color: -item-border-color;
+}
+
+.radius-35 {
+    -fx-border-radius:35;
+    -fx-background-radius:35;
+}
+
+.item-bg {
+    -fx-background-color: -item-bg;
+
+}
+
+.green:pressed{
+    -fx-background-color: -green;
+    -fx-text-fill: -light;
+}
+
+.red:pressed{
+    -fx-background-color: -red;
+    -fx-text-fill: -light;
+}
+
+.bg-color{
+    -fx-background-color: -bg-color;
+}
+
+.line-color {
+    -fx-border-color: -line-color;
+}
+
+.shadow {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
+    -fx-background-insets:5;
+}

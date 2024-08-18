@@ -1,0 +1,16 @@
+@import "color.css";
+
+.progress-bar:determinate {
+    -fx-border-color: -gray-light;
+    -fx-padding:0;
+    -fx-border-radius: 4;
+}
+.progress-bar:determinate .bar{
+    -fx-background-color: -base-color; 
+}
+.progress-bar:determinate .track{
+    -fx-background-color: transparent; 
+    -fx-padding: 0;
+}
+
+ 
