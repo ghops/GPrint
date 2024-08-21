@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="460.0" styleClass="shadow" stylesheets="@../../styles/style.css" type="AnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="460.0" styleClass="shadow" stylesheets="@../../styles/style.css" type="AnchorPane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="title" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="75.0" prefWidth="275.0" text="Kalite Formu..." wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <padding>
@@ -54,7 +54,7 @@
             <TextField fx:id="width" prefHeight="42.0" prefWidth="266.0" promptText="en" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField fx:id="weight" prefHeight="42.0" prefWidth="266.0" promptText="gramaj" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="description" prefHeight="42.0" prefWidth="266.0" promptText="açıklama" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <CheckBox fx:id="status" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <CheckBox fx:id="status" mnemonicParsing="false" styleClass="bg-gray" GridPane.columnIndex="1" GridPane.rowIndex="7" />
             <Label text="Baskı türü" GridPane.rowIndex="5" />
             <ComboBox fx:id="printType" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <HBox alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="330.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
