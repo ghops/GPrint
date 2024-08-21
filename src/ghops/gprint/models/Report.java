@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Report {
+
     private String header = "";
     private int width = 100;
     List<String> data = new ArrayList<>();
@@ -31,10 +32,9 @@ public class Report {
     public void setData(List<String> data) {
         this.data = data;
     }
-    
-    public void addData(String text){
+
+    public void addData(String text) {
         this.data.add(text);
     }
-    
-    
+
 }
