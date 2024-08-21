@@ -113,6 +113,7 @@ public class FabricView extends StackPane {
                     if (t != null) {
                         CheckBox cb = new CheckBox();
                         cb.selectedProperty().setValue(t);
+                        cb.getStyleClass().add("bg-gray");
                         setGraphic(cb);
 
                         Fabric fabric = (Fabric) getTableRow().getItem();
