@@ -3,22 +3,8 @@
 .check-box {
     -fx-padding:0; 
     -fx-background-color: transparent;
-     
 }
+ 
 .check-box .box {
-    -fx-background-color: -bg-color;
-    -fx-border-width:0;
-    -fx-border-radius:3;
-}
-
-.check-box:selected .mark {
-
     -fx-background-color: white;
-
 }
-
-.check-box:selected .box {
-
-    -fx-background-color: -base-color;
-}
-
