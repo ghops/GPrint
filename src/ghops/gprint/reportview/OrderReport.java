@@ -97,32 +97,58 @@ public class OrderReport extends AReport implements IReport {
     }
 
     @Override
-    public void writePDF(TableView table) {
-        List<String> headers = new ArrayList<>();
-        List<Float> size = new ArrayList<>();
-        List<TreeMap<String, String>> data = new ArrayList<>();
+    public void writePDF(String fileName, TableView table) {
+
         TableView<Order> ot = (TableView<Order>) table;
+        ObservableList<Order> items = ot.getSelectionModel().isEmpty() ? ot.getItems() : ot.getSelectionModel().getSelectedItems();
 
-        for (int colIndex = 0; colIndex < ot.getColumns().size(); colIndex++) {
-            headers.add(ot.getColumns().get(colIndex).getText());
-           // size.add((float) ot.getColumns().get(colIndex).getWidth());
-           size.add(200f);
-        }
+        //List<String> headers = new ArrayList<>();
+        TreeMap<String, String> headers = new TreeMap<>();
+        TreeMap<String, Float> sizeList = new TreeMap<>();
 
-        for (int i = 0; i < ot.getItems().size(); i++) {
+        List<TreeMap<String, String>> data = new ArrayList<>();
+
+        headers.put("title1", "TARİH");
+        headers.put("title2", "SİPARİŞ NO");
+        headers.put("title3", "MÜŞTERİ");
+        headers.put("title4", "DESEN");
+        headers.put("title5", "KALİTE");
+        headers.put("title6", "METRE");
+        headers.put("title7", "BASILAN");
+
+        sizeList.put("column1", 80f);
+        sizeList.put("column2", 90f);
+        sizeList.put("column3", 200f);
+        sizeList.put("column4", 150f);
+        sizeList.put("column5", 150f);
+        sizeList.put("column6", 100f);
+        sizeList.put("column7", 100f);
+
+        for (int i = 0; i < items.size(); i++) {
             TreeMap<String, String> tm = new TreeMap<>();
-            tm.put("value1", ot.getItems().get(i).getDate().toString());
-            tm.put("value2", ot.getItems().get(i).getOrderNo());
-            tm.put("value3", ot.getItems().get(i).getCustomer().getName());
-            tm.put("value4", ot.getItems().get(i).getProducts().get(0).getFabric().getName());
-            tm.put("value5", String.valueOf( ot.getItems().get(i).getProducts().get(0).getMeters()));
-            tm.put("value6", String.valueOf( ot.getItems().get(i).getProducts().get(0).getPrintedMeters()));
+            tm.put("value1", items.get(i).getDate().toString());
+            tm.put("value2", items.get(i).getOrderNo());
+
+            String customer = (items.get(i).getCustomer().getName().length() > 40) ? items.get(i).getCustomer().getName().substring(0, 40) : items.get(i).getCustomer().getName();
+            tm.put("value3", customer);
+            tm.put("value4", items.get(i).getProducts().get(0).getDesign());
+            tm.put("value5", items.get(i).getProducts().get(0).getFabric().getName());
+            tm.put("value6", String.valueOf(items.get(i).getProducts().get(0).getMeters()));
+            tm.put("value7", String.valueOf(items.get(i).getProducts().get(0).getPrintedMeters()));
             data.add(tm);
 
         }
 
-        PDFCreator creator = new PDFCreator(headers, size, data);
-        creator.write(true);
+        PDFCreator creator = new PDFCreator(headers, sizeList, data);
+        creator.setFileName(fileName);
+        creator.write(true, true);
+    }
+
+ 
+
+    @Override
+    public ObservableList getData(LocalDate first, LocalDate last) {
+        return this.getData();
     }
 
 }

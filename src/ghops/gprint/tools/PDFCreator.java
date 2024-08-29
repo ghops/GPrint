@@ -2,15 +2,10 @@ package ghops.gprint.tools;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
@@ -38,13 +33,15 @@ public class PDFCreator {
     private boolean showAllHeader = false;
     private String header = "";
 
-    private List<String> headers;
+    private TreeMap<String, String> headers;
     private List<TreeMap<String, String>> data;
-    private List<Float> size;
+    private TreeMap<String, Float> size;
 
     private int currentRow = 0;
 
-    public PDFCreator(List<String> headers, List<Float> size, List<TreeMap<String, String>> data) {
+    private String fileName = "report";
+
+    public PDFCreator(TreeMap<String, String> headers, TreeMap<String, Float> size, List<TreeMap<String, String>> data) {
         this.headers = headers;
         this.size = size;
         this.data = data;
@@ -63,6 +60,10 @@ public class PDFCreator {
         this.showHeader = showHeader;
         this.showAllHeader = allPage;
         this.write();
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     public void write() {
@@ -99,7 +100,7 @@ public class PDFCreator {
                 currentRow++;
             }
 
-            doc.save("wwii.pdf");
+            doc.save(this.fileName + ".pdf");
             doc.close();
         } catch (IOException ex) {
             Logger.getLogger(ReportPDF.class.getName()).log(Level.SEVERE, null, ex);
@@ -111,20 +112,20 @@ public class PDFCreator {
             cs.transform(new Matrix(0, 1, -1, 0, page.getMediaBox().getWidth(), 0));
             this.xPosition = this.xStart;
 
-            int colIndex = 0;
-            for (String hdr : this.headers) {
+            int colIndex = 1;
 
+            for (String key : this.headers.keySet()) {
                 cs.setFont(this.fontBold, this.fontSize);
                 cs.beginText();
                 cs.newLineAtOffset(xPosition, yPosition);
-                cs.showText(hdr);
+                cs.showText(this.headers.get(key));
                 cs.endText();
                 //float percent = 20; //(float) (tc.getWidth() / (this.table.getWidth()));
-                xPosition += this.size.get(colIndex);
+                xPosition += this.size.get("column" + colIndex);
                 //System.out.println(page.getMediaBox().getHeight() * percent);
-                
-               // xPosition += page.getMediaBox().getHeight() * percent;
-               colIndex++;
+
+                // xPosition += page.getMediaBox().getHeight() * percent;
+                colIndex++;
             }
             cs.close();
             this.yPosition -= this.rowHeight;
@@ -135,5 +136,30 @@ public class PDFCreator {
 
     private void writeRow(PDPage page, int rowIndex) {
 
+        try (PDPageContentStream cs = new PDPageContentStream(doc, page, PDPageContentStream.AppendMode.APPEND, false, true)) {
+            cs.transform(new Matrix(0, 1, -1, 0, page.getMediaBox().getWidth(), 0));
+            this.xPosition = this.xStart;
+
+            int colIndex = 1;
+            TreeMap<String, String> tm = this.data.get(rowIndex);
+            for (String key : tm.keySet()) {
+                cs.setFont(this.font, this.fontSize);
+                cs.beginText();
+                cs.newLineAtOffset(xPosition, yPosition);
+                cs.showText(tm.get(key));
+                cs.endText();
+                //float percent = 20; //(float) (tc.getWidth() / (this.table.getWidth()));
+                xPosition += this.size.get("column" + colIndex);
+                //System.out.println(page.getMediaBox().getHeight() * percent);
+
+                // xPosition += page.getMediaBox().getHeight() * percent;
+                colIndex++;
+            }
+
+            cs.close();
+            this.yPosition -= this.rowHeight;
+        } catch (IOException ex) {
+            Logger.getLogger(ReportPDF.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

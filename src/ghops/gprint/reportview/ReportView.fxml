@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TableView?>
@@ -11,11 +12,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" type="AnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" type="AnchorPane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ToolBar layoutX="10.0" layoutY="10.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
             <Button fx:id="pdfButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="PDF" />
+            <DatePicker fx:id="firstDate" maxHeight="1.7976931348623157E308" prefHeight="40.0" prefWidth="175.0" />
+            <DatePicker fx:id="lastDate" maxHeight="1.7976931348623157E308" prefHeight="40.0" prefWidth="175.0" />
          </items>
       </ToolBar>
       <HBox layoutX="10.0" layoutY="10.0" spacing="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="52.0">
@@ -36,7 +39,7 @@
                   <VBox spacing="3.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label text="Sayfa başlığı" />
-                        <TextField promptText="sayfa başlığı">
+                        <TextField fx:id="fileName" promptText="sayfa başlığı" text="repor">
                            <VBox.margin>
                               <Insets left="15.0" />
                            </VBox.margin>
